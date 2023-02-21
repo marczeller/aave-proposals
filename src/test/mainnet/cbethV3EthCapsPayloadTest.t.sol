@@ -6,7 +6,7 @@ import {AaveGovernanceV2} from 'aave-address-book/AaveAddressBook.sol';
 import {AaveV3Ethereum, AaveV3EthereumAssets} from 'aave-address-book/AaveV3Ethereum.sol';
 import {ProtocolV3TestBase, ReserveConfig, ReserveTokens, IERC20} from 'aave-helpers/ProtocolV3TestBase.sol';
 import {ProtocolV3TestBase, ReserveConfig} from 'aave-helpers/ProtocolV3TestBase.sol';
-import {AaveV3EthCbETHCapsPayload} from '../../contracts/mainnet/AaveV3EthCBETHCapsPayload.sol';
+import {AaveV3EthCbETHCapsPayload} from '../../contracts/mainnet/AaveV3EthcbETHPayload.sol';
 import {TestWithExecutor} from 'aave-helpers/GovHelpers.sol';
 
 contract AaveV3EthCbETHCapsPayloadTest is ProtocolV3TestBase, TestWithExecutor {

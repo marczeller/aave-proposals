@@ -91,3 +91,8 @@ freeze-busd-payload :; forge script script/AaveV2EthFreezeBUSD.s.sol:AaveV2EthFr
 test-freeze-busd :; forge test -vvv --match-contract AaveV2EthBUSDFreezeTest
 
 create-freeze-busd-proposal :; forge script script/CreateBUSDFreeze.s.sol:FreezeBUSDProposal --rpc-url ${RPC_MAINNET} --legacy --broadcast --ledger --mnemonic-indexes ${MNEMONIC_INDEX} --sender ${LEDGER_SENDER} --verify --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET} -vvvv
+cbeth-cap-payload :; forge script script/DeployCbETHCapsPayload.s.sol:CBETH --rpc-url ${RPC_MAINNET} --legacy --broadcast --ledger --mnemonic-indexes ${MNEMONIC_INDEX} --sender ${LEDGER_SENDER} --verify --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET} -vvvv
+
+test-cbeth-cap-payload :; forge test -vvv --match-contract AaveV3EthCbETHCapsPayloadTest
+
+create-cbeth-proposal :; forge script script/CreateCBETHCapProposal.s.sol:CBETHCAPProposal --rpc-url ${RPC_MAINNET} --legacy --broadcast --ledger --mnemonic-indexes ${MNEMONIC_INDEX} --sender ${LEDGER_SENDER} --verify --etherscan-api-key ${ETHERSCAN_API_KEY_MAINNET} -vvvv

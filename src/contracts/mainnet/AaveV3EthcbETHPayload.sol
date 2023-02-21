@@ -10,7 +10,7 @@ import {IGenericV3ListingEngine, AaveV3ListingEthereum} from 'aave-helpers/v3-li
  * - Snapshot: https://snapshot.org/#/aave.eth/proposal/0xcbb588f0030f7726da3d065a30c2500652bbd0def6ca5f5f17a82daca777578e
  * - Dicussion: https://governance.aave.com/t/arc-add-support-for-cbeth/10425/30
  */
-contract AaveV3EthcbETHPayload is AaveV3ListingEthereum {
+contract AaveV3EthCbETHCapsPayload is AaveV3ListingEthereum {
   address constant CBETH = 0xBe9895146f7AF43049ca1c1AE358B0541Ea49704;
   address constant CBETH_USD_FEED = address(0x5f4d15d761528c57a5C30c43c1DAb26Fc5452731);
 
