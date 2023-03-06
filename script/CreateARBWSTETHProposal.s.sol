@@ -8,7 +8,7 @@ contract CreateMainnetProposal is WithChainIdValidation {
 }
 
 contract ARBWSTETHProposal is CreateMainnetProposal {
-  bytes32 internal IPFS_HASH = 0; // TOFIX: Replace with actual hash
+  bytes32 internal IPFS_HASH = 0x88483d979386f2743b5801e8875b6157d4ff776ca89e45173a5da22229b816a4;
 
   function run() external {
     GovHelpers.Payload[] memory payloads = new GovHelpers.Payload[](1);
@@ -18,7 +18,7 @@ contract ARBWSTETHProposal is CreateMainnetProposal {
     vm.startBroadcast();
     GovHelpers.createProposal(
       payloads,
-      IPFS_HASH // TOFIX: Replace with actual hash
+      IPFS_HASH
     );
     vm.stopBroadcast();
   }
