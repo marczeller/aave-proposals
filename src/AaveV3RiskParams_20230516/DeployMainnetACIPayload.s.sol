@@ -14,11 +14,11 @@ contract ACIPayloadProposal is EthereumScript {
   function run() external broadcast {
     GovHelpers.Payload[] memory payloads = new GovHelpers.Payload[](1);
     payloads[0] = GovHelpers.buildMainnet(
-      address(0) // TODO: Replace by actual payload
+      0x8AFB5A7EC013fe08C36eFC9B3B48AFed9D53D901
     );
     GovHelpers.createProposal(
       payloads,
-      0 // TODO: replace by actual Hash
+      0x899a2100c271e4cae958d3af62e74717ed2662dbd8ac6ffdc17c4d126ba966ec
     );
   }
 }
