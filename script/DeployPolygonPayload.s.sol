@@ -4,18 +4,10 @@
 //    WE WILL REMOVE SCRIPTS PERIODICALLY
 // #########################################
 pragma solidity ^0.8.0;
-import {WithChainIdValidation} from './WithChainIdValidation.sol';
+import {PolygonScript} from 'aave-helpers/ScriptUtils.sol';
 
-import {MiMaticPayload} from '../src/contracts/polygon/MiMaticPayload.sol';
-
-contract DeployPolygonPayload is WithChainIdValidation {
-  constructor() WithChainIdValidation(137) {}
-}
-
-contract MiMatic is DeployPolygonPayload {
-  function run() external {
-    vm.startBroadcast();
-    new MiMaticPayload();
-    vm.stopBroadcast();
+contract ExamplePolygonPayload is PolygonScript {
+  function run() external broadcast {
+    // new PolygonPayload();
   }
 }
