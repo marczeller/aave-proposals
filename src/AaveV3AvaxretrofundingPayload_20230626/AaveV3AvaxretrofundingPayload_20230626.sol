@@ -22,8 +22,8 @@ contract AaveV3AvaxretrofundingPayload is IProposalGenericExecutor {
     uint256 public constant AMOUNT_aAvaWAVAX = 9_584_300000000000000000;
     uint256 public constant AMOUNT_avWAVAX = 19_415_700000000000000000;
 
-    uint256 public constant AMOUNT_aAvaWBTC = 1_81000000;
-    uint256 public constant AMOUNT_avWBTC = 1_08000000;
+    uint256 public constant AMOUNT_aAvaWBTC = 1_08000000;
+    uint256 public constant AMOUNT_avWBTC = 1_81000000;
 
 
     function execute() external {
