@@ -24,10 +24,10 @@ contract AaveV3AvaxretrofundingPayloadTest is TestWithExecutor {
   address public constant aAvaWBTC = 0x078f358208685046a11C85e8ad32895DED33A249;
   address public constant avWBTC = 0x686bEF2417b6Dc32C50a3cBfbCC3bb60E1e9a15D;
 
-  uint256 public constant AMOUNT_aAvaWAVAX = 9584.3e18;
-  uint256 public constant AMOUNT_avWAVAX = 19415.7e18;
-  uint256 public constant AMOUNT_aAvaWBTC = 1.08e8;
-  uint256 public constant AMOUNT_avWBTC = 1.81e8;
+  uint256 public constant AMOUNT_aAvaWAVAX = 9584.301837e18;
+  uint256 public constant AMOUNT_avWAVAX = 19415.698163e18;
+  uint256 public constant AMOUNT_aAvaWBTC = 1.077275e8;
+  uint256 public constant AMOUNT_avWBTC = 1.807146e8;
 
   function setUp() public {
     vm.createSelectFork(vm.rpcUrl('avalanche'), 32737321);

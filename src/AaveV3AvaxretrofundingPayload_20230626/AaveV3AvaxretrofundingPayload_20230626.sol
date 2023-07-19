@@ -19,11 +19,11 @@ contract AaveV3AvaxretrofundingPayload is IProposalGenericExecutor {
     address public constant aAvaWBTC = AaveV3AvalancheAssets.WBTCe_A_TOKEN;
     address public constant avWBTC = 0x686bEF2417b6Dc32C50a3cBfbCC3bb60E1e9a15D;
     
-    uint256 public constant AMOUNT_aAvaWAVAX = 9_584_300000000000000000;
-    uint256 public constant AMOUNT_avWAVAX = 19_415_700000000000000000;
+    uint256 public constant AMOUNT_aAvaWAVAX = 9_584_301837000000000000;
+    uint256 public constant AMOUNT_avWAVAX = 19_415_698163000000000000;
 
-    uint256 public constant AMOUNT_aAvaWBTC = 1_08000000;
-    uint256 public constant AMOUNT_avWBTC = 1_81000000;
+    uint256 public constant AMOUNT_aAvaWBTC = 1_07727500;
+    uint256 public constant AMOUNT_avWBTC = 1_80714600;
 
 
     function execute() external {
