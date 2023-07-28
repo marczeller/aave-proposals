@@ -5,10 +5,10 @@ import 'forge-std/Test.sol';
 
 import {AaveV3AvaxretrofundingPayload} from './AaveV3AvaxretrofundingPayload_20230626.sol';
 import {AaveV3Avalanche} from 'aave-address-book/AaveV3Avalanche.sol';
-import {GovHelpers, TestWithExecutor} from 'aave-helpers/GovHelpers.sol';
+import {GovHelpers} from 'aave-helpers/GovHelpers.sol';
 import {IERC20} from 'solidity-utils/contracts/oz-common/interfaces/IERC20.sol';
 
-contract AaveV3AvaxretrofundingPayloadTest is TestWithExecutor {
+contract AaveV3AvaxretrofundingPayloadTest is Test {
   struct TokenBalances {
     uint256 aAvaWAVAX;
     uint256 avWAVAX;
@@ -31,8 +31,6 @@ contract AaveV3AvaxretrofundingPayloadTest is TestWithExecutor {
 
   function setUp() public {
     vm.createSelectFork(vm.rpcUrl('avalanche'), 32737321);
-    // Address of the AVAX Guardian
-    _selectPayloadExecutor(AaveV3Avalanche.ACL_ADMIN);
   }
 
   function testExecute() public {
@@ -49,7 +47,12 @@ contract AaveV3AvaxretrofundingPayloadTest is TestWithExecutor {
       avWBTC: IERC20(avWBTC).balanceOf(AAVECO_ADDRESS)
     });
 
-    _executePayload(address(new AaveV3AvaxretrofundingPayload()));
+    // Address of the AVAX Guardian used to execute
+    GovHelpers.executePayload(
+      vm,
+      address(new AaveV3AvaxretrofundingPayload()),
+      AaveV3Avalanche.ACL_ADMIN
+    );
 
     TokenBalances memory collectorAfter = TokenBalances({
       aAvaWAVAX: IERC20(aAvaWAVAX).balanceOf(COLLECTOR_ADDRESS),
