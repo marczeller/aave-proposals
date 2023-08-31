@@ -32,7 +32,38 @@ contract AaveV3_Polygon_SupplyCapLSTs_20230831_Test is ProtocolV3TestBase {
       'postAaveV3_Polygon_SupplyCapLSTs_20230831',
       AaveV3Polygon.POOL
     );
-
+    
+    address[] memory assetsChanged = new address[](2);
+    assetsChanged[0] = AaveV3PolygonAssets.stMATIC_UNDERLYING;
+    assetsChanged[1] = AaveV3PolygonAssets.wstETH_UNDERLYING;
+    _noReservesConfigsChangesApartFrom(allConfigsBefore, allConfigsAfter, assetsChanged);
+    
+    ReserveConfig memory stMATIC = _findReserveConfig(
+      allConfigsBefore,
+      AaveV3PolygonAssets.stMATIC_UNDERLYING
+    );
+    stMATIC.supplyCap = 66_000_000;
+    _validateReserveConfig(stMATIC, allConfigsAfter);
+    
+    ReserveConfig memory wstETH = _findReserveConfig(
+      allConfigsBefore,
+      AaveV3PolygonAssets.wstETH_UNDERLYING
+    );
+    wstETH.supplyCap = 4125;
+    _validateReserveConfig(wstETH, allConfigsAfter);
+    
+     e2eTestAsset(
+        AaveV3Polygon.POOL,
+        _findReserveConfig(allConfigsAfter, AaveV3PolygonAssets.WMATIC_UNDERLYING),
+        _findReserveConfig(allConfigsAfter, AaveV3PolygonAssets.stMATIC_UNDERLYING)
+        );
+        
+     e2eTestAsset(
+        AaveV3Polygon.POOL,
+        _findReserveConfig(allConfigsAfter, AaveV3PolygonAssets.WMATIC_UNDERLYING),
+        _findReserveConfig(allConfigsAfter, AaveV3PolygonAssets.wstETH_UNDERLYING)
+        );
+    
     diffReports(
       'preAaveV3_Polygon_SupplyCapLSTs_20230831',
       'postAaveV3_Polygon_SupplyCapLSTs_20230831'
